@@ -14,8 +14,8 @@ feature "Contacts Management" do
 
 
     within "#new_contact" do 
-      fill_in "#contact_name", with: "John Smith"
-      fill_in "#contact_email", with: "johnsmith@email.com"
+      fill_in "contact_name", with: "John Smith"
+      fill_in "contact_email", with: "johnsmith@email.com"
 
       click_button "Save"
     end
