@@ -3,6 +3,15 @@ require 'rails_helper'
 feature "Contacts Management" do 
   fixtures :contacts
 
+  scenario "User should see main nav" do 
+    visit root_path
+
+    expect(page).to have_text("Contacts")
+    expect(page).to have_text("Invoices")
+    expect(page).to have_text("Projects")
+    expect(page).to have_text("Users")
+  end
+
   scenario "User can browse contacts" do 
     visit contacts_path
 
