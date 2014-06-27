@@ -14,4 +14,12 @@ RSpec.describe ContactsController, :type => :controller do
       expect(response.status).to eq(200)
     end
   end
+
+  describe "POST create" do 
+    it "should be redirect" do 
+      post :create, contact: { name: "Jon Snow", email: "jon.snow@knowsnothing.com" }
+
+      expect(response.status).to eq(302)
+    end
+  end
 end
