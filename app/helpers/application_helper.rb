@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def link_with_icon name, path, icon_name
-    render 'link_with_icon', name: name, path: path, icon: icon_name
+    render 'link_with_icon', name: name, path: path, icon_name: icon_name
   end
 
   def nav_active? path

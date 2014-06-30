@@ -8,6 +8,11 @@
 </head>
 <body>
   <%= render 'navigation' %>
+  <div id='context-nav'>
+    <div class='container'>
+      <%= content_for :context_nav %>
+    </div>
+  </div>
   <div class='container'>
     <%= yield %>
   </div>
