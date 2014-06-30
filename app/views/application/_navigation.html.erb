@@ -5,18 +5,10 @@
     </div>
 
     <ul class='nav navbar-nav'>
-      <li class='active'>
-        <a href='#'>Contacts</a>
-      </li>
-      <li>
-        <a href='#'>Invoices</a>
-      </li>
-      <li>
-        <a href='#'>Projects</a>
-      </li>
-      <li class='active'>
-        <a href='#'>Users</a>
-      </li>
+      <%= nav_link "Projects" %>
+      <%= nav_link "Contacts", contacts_path %>
+      <%= nav_link "Invoices" %>
+      <%= nav_link "Users" %>
     </ul>
   </div>
 </nav>
