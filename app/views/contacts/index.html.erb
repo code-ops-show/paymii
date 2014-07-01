@@ -11,6 +11,10 @@
   </div>
 <% end %>
 
+<div id='contacts'>
 <% @contacts.each do |contact| %>
-  <%= contact.name %>
+  <%= div_for contact do %>
+    <%= contact.name %>
+  <% end %>
 <% end %>
+</div>
