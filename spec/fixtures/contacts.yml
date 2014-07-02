@@ -1,3 +1,7 @@
 contact_1:
   name: "Contact #1"
   email: "contact@paymii.com"
+
+contact_2:
+  name: "Contact #2"
+  email: "contact2@paymii.com"
