@@ -1,22 +1,60 @@
-$lightgray: #f5f5f5
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700)
 
-a
-  font-weight: 200
+
+$lightgray: #f5f5f5
+$darkblue: #4285f4
+$lightblue: #3367d6
+$lightgreen: #8bc34a
+$darkgreen: #7cb342
+
+html, body
+  position: relative
+  height: 100%
+  font-size: 16px
+  background-color: #ececec
+  font-family: 'Roboto', sans-serif
+  font-weight: 300
+  color: #5e5e5e
 
 a:hover
   text-decoration: none
 
-form.form-horizontal
+form
   margin-top: 40px
+  padding: 20px
   p.form-info
     padding: 10px
+
+  label.control-label
+    font-weight: 500
+
+div.form-group
+  &:nth-last-child(2)
+    margin-bottom: 24px
+
+.control-label
+  color: #5e5e5e
 
 .form-control
   border: none
   @include box-shadow(none)
   border-radius: 0px
   background: #f8f8f8
-  border: 1px solid #e7e7e7
-
+  border: 1px solid #eee
+  resize: none
   &:focus
     @include box-shadow(0px 0px 5px #ddd)
+
+.btn-primary
+  background-color: $lightgreen
+  border: none
+  font-size: 16px
+
+.btn-primary:hover
+  background-color: $darkgreen
+
+
+.card
+  @include box-shadow(0px 1px 3px rgba(0,0,0,0.2))
+  border-radius: 2px
+  background-color: white

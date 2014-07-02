@@ -1,27 +1,47 @@
 nav.navbar-default
-  background: white
-  border-bottom: none
+  border: none
   margin-bottom: 0px
+  li.active, li:hover
+    a, a:hover
+      background: transparent
 
-  ul.nav
-    li.active, li:hover
-      a
-        background: transparent
-      a:hover
-        background: transparent
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a
+  color: #f8f8f8
+
+.navbar-default .navbar-nav > li > a:hover
+  color: #5e5e5e
+
+.navbar-default 
+  .navbar-nav
+    a, a:hover, a:focus
+      background-color: transparent
+      color: white
+    .active
+      a, a:hover, a:focus
+        background-color: transparent
+        font-weight: 500
+        color: #555
+
+
+.navbar-default
+  background-color: #b4b4b4
 
 div#context-nav
-  background: $lightgray
-  padding-top: 10px
-  padding-bottom: 10px
+  background:  white
+  padding: 15px inherit
+  color: #4d4d4d
+  @include box-shadow(0px 2px 2px rgba(0,0,0,0.1))
+
+  a 
+    color: $lightgreen
 
   div.center
     text-align: center
     h1
       margin: 0
-      font-size: 14px
+      font-size: 16px
       line-height: 1.5
-      font-weight: 200
 
   div.right
     text-align: right

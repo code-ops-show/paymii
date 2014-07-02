@@ -1,0 +1,16 @@
+<%= div_for contact, class: 'col-md-3' do %>
+  <div class='contact-wrapper card'>
+    <div class='contact-meta'>
+      <div class='contact-name'>
+        <%= contact.name %>
+      </div>
+      <div class='contact-email'>
+        <%= contact.email %>
+      </div>
+    </div>
+    <div class="contact-footer row">
+      <div class="col-xs-6 border-right"><%= link_to "Edit", edit_contact_path(contact) %></div>
+      <div class="col-xs-6"><%= link_to "Delete", contact_path(contact),:method => :delete %></div>
+    </div>
+  </div>
+<% end %>

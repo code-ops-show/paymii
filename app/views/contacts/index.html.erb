@@ -12,9 +12,5 @@
 <% end %>
 
 <div id='contacts'>
-<% @contacts.each do |contact| %>
-  <%= div_for contact do %>
-    <%= contact.name %>
-  <% end %>
-<% end %>
+  <%= render @contacts %>
 </div>

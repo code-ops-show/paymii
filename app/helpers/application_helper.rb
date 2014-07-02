@@ -1,10 +1,14 @@
 module ApplicationHelper
   def nav_link name, path='#'
-    render 'nav_link', name: name, path: path, active: nav_active?(path)
+  	content_tag :li, class: nav_active?(path) do 
+  		link_to name, path
+  	end
   end
 
-  def link_with_icon name, path, icon_name
-    render 'link_with_icon', name: name, path: path, icon_name: icon_name
+  def link_with_icon name, path, icon_name, options={}
+  	link_to path, options do 
+  		icon(icon_name) + " #{name}"
+  	end
   end
 
   def nav_active? path
