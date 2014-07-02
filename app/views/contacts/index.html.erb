@@ -1,3 +1,16 @@
-<% @contacts.each do |contact| %>
-  <%= contact.name %>
+<%= content_for :context_nav do %>
+  <div class='row-fluid'>
+    <div class='col-md-4'>
+    </div>
+    <div class='col-md-4 center'>
+      <h1>All Contacts</h1>
+    </div>
+    <div class='col-md-4 right'>
+      <%= link_with_icon "New Contact", new_contact_path, 'plus' %>
+    </div>
+  </div>
 <% end %>
+
+<div id='contacts'>
+  <%= render @contacts %>
+</div>

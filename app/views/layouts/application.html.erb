@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'navigation' %>
+  <div id='context-nav'>
+    <div class='container'>
+      <%= content_for :context_nav %>
+    </div>
+  </div>
+  <div class='container'>
+    <%= yield %>
+  </div>
 </body>
 </html>
