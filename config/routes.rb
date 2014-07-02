@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   
   resources :contacts
 
+  resource :settings
+
   root to: "contacts#index"
 end
