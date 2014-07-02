@@ -1,10 +1,10 @@
 <%= content_for :context_nav do %>
   <div class='row-fluid'>
     <div class='col-md-4'>
-      <%= link_with_icon "Back", contacts_path, 'arrow-left' %>
+      <%= link_with_icon "Cancel", contacts_path, 'arrow-left' %>
     </div>
     <div class='col-md-4 center'>
-      <h1>New Contact</h1>
+      <h1>Edit Contact: <%= @contact.name %></h1>
     </div>
     <div class='col-md-4'></div>
   </div>
