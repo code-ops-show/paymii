@@ -8,7 +8,6 @@ $lightblue: #03a9f4
 $lightgreen: #8bc34a
 $darkgreen: #7cb342
 
-
 html, body
   position: relative
   height: 100%
@@ -17,6 +16,15 @@ html, body
   font-family: 'Roboto', sans-serif
   font-weight: 300
   color: #5e5e5e
+
+
+*:focus
+  outline: none
+
+.form-control:focus
+  -webkit-box-shadow: none !important
+  box-shadow: none !important
+
 
 a:hover
   text-decoration: none
@@ -33,6 +41,10 @@ form
 div.form-group
   &:nth-last-child(2)
     margin-bottom: 24px
+
+.form-control
+  background: transparent
+  border: none
 
 .control-label
   color: #5e5e5e
