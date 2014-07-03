@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paymii</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'navigation' %>
+  <div id='context-nav' class='single-card'>
+    <div class='container'>
+      <%= content_for :context_nav %>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-3'>
+        <div class='list-group'>
+          <% @configurables.each do |c| %>
+            <%= link_to c.name, settings_path(c.slug), class: 'list-group-item' %>
+          <% end %>
+        </div>
+      </div>
+      <div class='col-xs-9'>
+        <%= yield %>
+
+        <div class='single-card-container card'>
+          <div class='display-horizontal'>
+            <% @configurables.each do |configurable| %>
+              <h2><%= configurable.name %></h2>
+              <% configurable.settings.each do |k, v| %>
+                <div class='form-group display-row row'>
+                  <div class='col-xs-3'>
+                    <%= label_tag k, k.titleize %>
+                  </div>
+                  <div class='col-xs-9'>
+                    <div class='form-control'>
+                      <%= v %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
