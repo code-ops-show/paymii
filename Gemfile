@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'money-rails'
 gem 'font-awesome-sass'
+gem 'friendly_id'
 
 group :development, :test do 
   gem 'rspec-rails', '~> 3.0.0'

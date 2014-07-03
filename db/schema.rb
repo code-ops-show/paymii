@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702103511) do
+ActiveRecord::Schema.define(version: 20140703173037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "configurables", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.hstore   "settings"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -54,6 +63,10 @@ ActiveRecord::Schema.define(version: 20140702103511) do
     t.string   "default_currency"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo"
+    t.string   "date_format"
+    t.string   "time_zone"
+    t.hstore   "invoice",          default: {}
   end
 
   create_table "users", force: true do |t|

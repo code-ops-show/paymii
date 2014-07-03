@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+configurable = YAML::load(File.open(File.join(Rails.root, 'config', 'configurables.yml')))
+
+configurable[:settings].each do |k, v|
+  Configurable.create(name: k, settings: v.map { |v| { v => "" }}.inject { |sum, n| sum.merge(n) })
+end

@@ -1,0 +1,25 @@
+:settings:
+  Account:
+    - time_zone
+    - date_format
+    - base_currency
+    - currency_display
+  Company:
+    - name
+    - address
+    - logo
+  Invoice:
+    - logo
+    - title
+
+:possible_values:
+  Account:
+    date_format: 
+      - "DD/MM/YYYY"
+      - "MM/DD/YYYY"
+      - "DD-MM-YYYY"
+    currency_display:
+      - "$10,000 USD"
+      - "$10,000"
+      - "USD 10,000"
+      - "10,000 USD"
