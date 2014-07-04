@@ -13,20 +13,6 @@
 
 <div class='single-card-container card'>
   <div class='display-horizontal'>
-    <% @configurables.each do |configurable| %>
-      <h2><%= configurable.name %></h2>
-      <% configurable.settings.each do |k, v| %>
-        <div class='form-group display-row row'>
-          <div class='col-xs-3'>
-            <%= label_tag k, k.titleize %>
-          </div>
-          <div class='col-xs-9'>
-            <div class='form-control'>
-              <%= v %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render 'setting', configurable: @configurable %>
   </div>
 </div>
