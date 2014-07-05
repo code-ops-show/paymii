@@ -16,9 +16,10 @@
   <div class='container'>
     <div class='row'>
       <div class='col-xs-3'>
-        <div class='list-group'>
+        <div class='list-group right'>
           <% @configurables.each do |c| %>
-            <%= link_with_icon c.name, setting_path(c.slug), settings_icon[c.slug], class: 'list-group-item' %>
+            <%= link_with_icon c.name, setting_path(c.slug), settings_icon[c.slug], 
+                                class: "list-group-item #{nav_active?(setting_path(c.slug))}" %>
           <% end %>
         </div>
       </div>
