@@ -19,7 +19,7 @@
         <div class='list-group'>
           <% @configurables.each do |c| %>
             <%= link_with_icon c.name, setting_path(c.slug), settings_icon[c.slug], 
-                                class: "list-group-item #{nav_active?(setting_path(c.slug))}" %>
+                                class: "list-group-item #{nav_fuzzy_active?(setting_path(c.slug))}" %>
           <% end %>
         </div>
       </div>
