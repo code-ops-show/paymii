@@ -6,10 +6,18 @@ class SettingsController < ApplicationController
   end
 	
   def show
-    @configurable = Configurable.friendly.find(params[:id])
+    @configurable = set_configurable
+  end
+
+  def edit
+    @configurable = set_configurable
   end
   
 private
+
+  def set_configurable
+    Configurable.friendly.find(params[:id])
+  end
 
   def load_configurables
     @configurables = Configurable.all

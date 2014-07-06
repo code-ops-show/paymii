@@ -14,6 +14,14 @@ module ApplicationHelper
   def nav_active? path
     request.path == path ? 'active' : nil
   end
+
+  def display label, value
+    render 'display', label: label, value: value
+  end
+
+  def field label, field
+    
+  end
 end
 
 

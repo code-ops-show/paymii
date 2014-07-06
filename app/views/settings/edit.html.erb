@@ -7,7 +7,6 @@
       <h1>System Settings</h1>
     </div>
     <div class='col-md-4 right'>
-      <%= link_with_icon "Edit", edit_setting_path(@configurable.slug), 'pencil' %>
     </div>
   </div>
 <% end %>
@@ -15,6 +14,6 @@
 <div class='single-card-container card'>
   <div class='display-horizontal'>
     <h2><%= @configurable.name %></h2>
-    <%= render "settings/display/#{@configurable.slug}" %>
+    <%= render "settings/forms/#{@configurable.slug}" %>
   </div>
 </div>
