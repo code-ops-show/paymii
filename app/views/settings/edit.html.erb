@@ -12,8 +12,8 @@
 <% end %>
 
 <div class='single-card-container card'>
-  <div class='display-horizontal'>
-    <h2><%= @configurable.name %></h2>
-    <%= render "settings/forms/#{@configurable.slug}" %>
+  <div class='edit-message'>
+    You can now edit these settings
   </div>
+  <%= render "settings/forms/#{@configurable.slug}" %>
 </div>

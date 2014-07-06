@@ -30,7 +30,7 @@ module ApplicationHelper
   end
 
   def field label, field
-    
+    render 'field', label: label, field: field
   end
 end
 

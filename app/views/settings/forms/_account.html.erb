@@ -1,0 +1,18 @@
+<%= form_for @configurable, url: settings_path, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+  <h2><%= @configurable.name %></h2>
+
+  <%= f.fields_for :settings do |s| %>
+  <%= field s.label(:time_zone),
+            time_zone_select(s.object, :time_zone, nil, class: 'form-control' ) %> 
+
+  <%= field s.label(:date_format), 
+            s.select(:date_format, possible_values['Account']['date_format'] ,class: 'form-control') %>
+
+  <%= field s.label(:base_currency), 
+          s.select(:base_currency, Money::Currency.all ,class: 'form-control') %>
+
+  <%= field s.label(:currency_display), 
+          s.select(:currency_display, possible_values['Account']['currency_display'] ,class: 'form-control') %>
+                
+  <% end %>
+<% end %>
