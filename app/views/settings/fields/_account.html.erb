@@ -1,0 +1,11 @@
+<%= field f.label(:time_zone),
+          f.time_zone_select(:time_zone, nil, class: 'form-control' ) %> 
+
+<%= field f.label(:date_format), 
+          f.select(:date_format, possible_values['Account']['date_format'] ,class: 'form-control') %>
+
+<%= field f.label(:base_currency), 
+          f.select(:base_currency, Money::Currency.all ,class: 'form-control') %>
+
+<%= field f.label(:currency_display), 
+          f.select(:currency_display, possible_values['Account']['currency_display'] ,class: 'form-control') %>

@@ -15,5 +15,13 @@
   <div id='status' class='edit-message'>
     You can now edit these settings
   </div>
-  <%= render "settings/forms/#{@configurable.slug}" %>
+  <%= form_for @configurable, url: setting_path(@configurable.slug), html: { class: 'form-horizontal', role: 'form' } do |f| %>
+    <h2><%= @configurable.name %></h2>
+
+    <%= render "settings/fields/#{@configurable.slug}", f: f %>
+
+    <div class='form-group'>
+      <%= f.submit "Save", class: 'btn btn-link btn-block' %>
+    </div>
+  <% end %>
 </div>
