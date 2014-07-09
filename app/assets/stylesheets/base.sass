@@ -55,23 +55,34 @@ form
     @include box-shadow(0px 0px 5px #ddd)
 
 .btn-primary
-  background-color: #00BCD4
+  color: #00BCD4
+  background: transparent
   border: none
   font-size: 16px
+  border: 1px solid
+  border-radius: 3px
 
-.btn-link
+input[type="submit"].btn-block, [type="button"].btn-block
+  width: 20%
   color: #00BCD4
-  text-decoration: none
-  font-weight: bold
-  font-size: 18px
+  background: transparent
+  border: none
+  font-size: 16px
+  border: 1px solid
+  margin: 0 auto
+  border-radius: 3px
+
+
 
 .btn-primary:hover
-  background-color: #00acc1
+  color: #00acc1
+  background: transparent
 
 .btn-link:hover
   color: #00acc1
   font-weight: bold
   text-decoration: none
+  border: 1px solid
 
 
 .card
