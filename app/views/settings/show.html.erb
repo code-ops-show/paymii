@@ -16,5 +16,6 @@
   <div class='display-horizontal'>
     <h2><%= @configurable.name %></h2>
     <%= render "settings/display/#{@configurable.slug}" %>
+    <%= link_to "Edit", edit_setting_path(@configurable), class: 'btn btn-link btn-block' %>
   </div>
 </div>
