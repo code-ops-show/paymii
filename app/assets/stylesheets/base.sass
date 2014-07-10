@@ -7,6 +7,10 @@ $verydarkblue: #01579b
 $lightblue: #03a9f4
 $lightgreen: #8bc34a
 $darkgreen: #7cb342
+$primary_50: #e0f7fa
+$primary_100: #b2ebf2
+$primary_500: #00bcd4
+$primary_600: #00acc1
 
 html, body
   position: relative
@@ -24,6 +28,9 @@ html, body
 .form-control:focus
   -webkit-box-shadow: none !important
   box-shadow: none !important
+
+.center
+  text-align: center
 
 
 a:hover
@@ -54,35 +61,40 @@ form
   &:focus
     @include box-shadow(0px 0px 5px #ddd)
 
+.btn:focus
+  outline: none
+  text-decoration: none
+
+.btn:active
+  outline: none
+  text-decoration: none
+
 .btn-primary
-  color: #00BCD4
+  color: $primary_500
   background: transparent
   border: none
   font-size: 16px
   border: 1px solid
   border-radius: 3px
-
-input[type="submit"].btn-block, [type="button"].btn-block
-  width: 20%
-  color: #00BCD4
-  background: transparent
-  border: none
-  font-size: 16px
-  border: 1px solid
-  margin: 0 auto
-  border-radius: 3px
-
-
 
 .btn-primary:hover
-  color: #00acc1
+  color: $primary_600
   background: transparent
 
+.btn-link
+  color: $primary_500
+  border: 1px solid $primary_500
+  border-radius: 4px
+
 .btn-link:hover
-  color: #00acc1
+  color: $primary_600
+  background: $primary_50
   font-weight: bold
   text-decoration: none
-  border: 1px solid
+  border: 1px solid $primary_600
+
+input.form-control[type='text']
+  border-left: 2px solid $primary_100 !important
 
 
 .card
