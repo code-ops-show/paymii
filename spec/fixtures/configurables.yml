@@ -1,0 +1,14 @@
+configurable_1:
+  name: "Account"
+  slug: 'account'
+  settings:
+    time_zone: 'Bangkok'
+    date_format: 'DD/MM/YYYY'
+    base_currency: 'USD'
+
+configurable_2:
+  name: "Company"
+  slug: 'company'
+  settings:
+    company_name: "Codemy"
+    address: "5/37 Sukhumvit 71"

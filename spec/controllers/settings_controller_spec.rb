@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe SettingsController, :type => :controller do
-  fixtures :settings
+  fixtures :configurables
 
   describe "GET show" do 
     it "should be success" do 
-      get :show
+      get :show, id: 'account'
       expect(response.status).to eq(200)
     end
   end
