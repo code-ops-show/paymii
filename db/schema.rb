@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703173037) do
+ActiveRecord::Schema.define(version: 20140724041728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
 
   create_table "configurables", force: true do |t|
     t.string   "name"
@@ -56,6 +66,13 @@ ActiveRecord::Schema.define(version: 20140703173037) do
 
   add_index "line_items", ["invoice_id"], name: "index_line_items_on_invoice_id", using: :btree
 
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "settings", force: true do |t|
     t.string   "company"
     t.text     "address"
@@ -68,6 +85,16 @@ ActiveRecord::Schema.define(version: 20140703173037) do
     t.string   "time_zone"
     t.hstore   "invoice",          default: {}
   end
+
+  create_table "tasks", force: true do |t|
+    t.text     "name"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
