@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   
   resources :contacts
   
+  resources :projects do 
+    resources :tasks
+  end
+
+  resources :tasks do 
+    resources :comments
+  end
+
   resources :settings
 
   root to: "contacts#index"
