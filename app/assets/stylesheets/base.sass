@@ -2,19 +2,36 @@
 
 
 $lightgray: #f5f5f5
-$darkblue: #4285f4
-$lightblue: #3367d6
+$darkblue: #0277bd
+$verydarkblue: #01579b
+$lightblue: #03a9f4
 $lightgreen: #8bc34a
 $darkgreen: #7cb342
+$primary_50: #e0f7fa
+$primary_100: #b2ebf2
+$primary_500: #00bcd4
+$primary_600: #00acc1
 
 html, body
   position: relative
   height: 100%
   font-size: 16px
-  background-color: #ececec
+  background-color: #f9f9f9
   font-family: 'Roboto', sans-serif
   font-weight: 300
   color: #5e5e5e
+
+
+*:focus
+  outline: none
+
+.form-control:focus
+  -webkit-box-shadow: none !important
+  box-shadow: none !important
+
+.center
+  text-align: center
+
 
 a:hover
   text-decoration: none
@@ -28,9 +45,9 @@ form
   label.control-label
     font-weight: 500
 
-div.form-group
-  &:nth-last-child(2)
-    margin-bottom: 24px
+.form-control
+  background: transparent
+  border: none
 
 .control-label
   color: #5e5e5e
@@ -44,16 +61,58 @@ div.form-group
   &:focus
     @include box-shadow(0px 0px 5px #ddd)
 
+.btn:focus
+  outline: none
+  text-decoration: none
+
+.btn:active
+  outline: none
+  text-decoration: none
+
 .btn-primary
-  background-color: $lightgreen
+  color: $primary_500
+  background: transparent
   border: none
   font-size: 16px
+  border: 1px solid
+  border-radius: 3px
 
 .btn-primary:hover
-  background-color: $darkgreen
+  color: $primary_600
+  background: transparent
 
+.btn-link
+  color: $primary_500
+  border: 1px solid $primary_500
+  border-radius: 4px
+
+.btn-link:hover
+  color: $primary_600
+  background: $primary_50
+  font-weight: bold
+  text-decoration: none
+  border: 1px solid $primary_600
+
+input.form-control[type='text'],
+textarea.form-control
+  border-left: 2px solid $primary_100 !important
 
 .card
   @include box-shadow(0px 1px 3px rgba(0,0,0,0.2))
   border-radius: 2px
   background-color: white
+
+.single-card
+  height: 223px
+
+.single-card-container
+  padding: 12px 0 240px 0
+  position: relative
+  top: -123px
+
+.single-card-row
+  padding: 10px 0
+  border-bottom: 1px solid #eee
+
+.single-card-content
+  padding: 0 24px

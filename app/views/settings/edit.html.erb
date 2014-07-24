@@ -1,0 +1,27 @@
+<%= content_for :context_nav do %>
+  <div class='row-fluid'>
+    <div class='col-md-4'>
+      <%= link_with_icon 'Back', :back, 'arrow-left' %>
+    </div>
+    <div class='col-md-4 center'>
+      <h1>System Settings</h1>
+    </div>
+    <div class='col-md-4 right'>
+    </div>
+  </div>
+<% end %>
+
+<div class='single-card-container card'>
+  <div id='status' class='edit-message'>
+    You can now edit these settings
+  </div>
+  <%= form_for @configurable, url: setting_path(@configurable.slug), html: { class: 'form-horizontal', role: 'form' } do |f| %>
+    <h2><%= @configurable.name %></h2>
+
+    <%= render "settings/fields/#{@configurable.slug}", f: f %>
+
+    <div class='form-group'>
+      <%= f.submit "Save", class: 'btn btn-link col-xs-3 col-xs-offset-3' %>
+    </div>
+  <% end %>
+</div>

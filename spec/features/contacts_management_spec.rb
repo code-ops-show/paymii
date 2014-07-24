@@ -12,6 +12,7 @@ feature "Contacts Management" do
     expect(page).to have_text("Invoices")
     expect(page).to have_text("Projects")
     expect(page).to have_text("Team")
+    expect(page).to have_text("Settings")
   end
 
   scenario "User can browse contacts" do 

@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  layout 'single_card', only: [:edit, :new]
+
   def index
     @contacts = Contact.all
   end

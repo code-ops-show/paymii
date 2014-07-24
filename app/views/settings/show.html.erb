@@ -1,0 +1,22 @@
+<%= content_for :context_nav do %>
+  <div class='row-fluid'>
+    <div class='col-md-4'>
+      <%= link_with_icon 'Back', :back, 'arrow-left' %>
+    </div>
+    <div class='col-md-4 center'>
+      <h1>System Settings</h1>
+    </div>
+    <div class='col-md-4 right'>
+      <%= link_with_icon "Edit", edit_setting_path(@configurable.slug), 'pencil' %>
+    </div>
+  </div>
+<% end %>
+
+
+<div class='single-card-container card'>
+  <div class='display-horizontal'>
+    <h2><%= @configurable.name %></h2>
+    <%= render "settings/display/#{@configurable.slug}" %>
+      <%= link_to "Edit", edit_setting_path(@configurable), class: 'btn btn-link col-xs-3 col-xs-offset-3' %>
+  </div>
+</div>
